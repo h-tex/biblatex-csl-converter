@@ -539,6 +539,7 @@ export const BibFieldTypes: Record<string, BibFieldType> = {
     institution: {
         type: "l_literal",
         biblatex: "institution",
+        csl: "authority",
     },
     introduction: {
         type: "l_name",
@@ -664,6 +665,7 @@ export const BibFieldTypes: Record<string, BibFieldType> = {
     organization: {
         type: "l_literal",
         biblatex: "organization",
+        csl: "authority",
     },
     origdate: {
         type: "f_date",
