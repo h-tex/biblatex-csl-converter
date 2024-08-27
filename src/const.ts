@@ -803,6 +803,7 @@ export const BibFieldTypes: Record<string, BibFieldType> = {
             "datacd",
             "audiocd",
         ],
+        csl: "genre", // According to CSL 1.0.2 Specification (https://docs.citationstyles.org/en/stable/specification.html)
     },
     url: {
         type: "f_uri",
