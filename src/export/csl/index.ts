@@ -184,7 +184,32 @@ export class CSLExporter {
             }
         }
         fValues["type"] = BibTypes[bib.bib_type].csl
+
+        if (fValues["type"] === "thesis" && "genre" in fValues) {
+            fValues["genre"] = this._reformThesisType(
+                fValues["genre"] as string
+            )
+        }
         return fValues
+    }
+
+    _reformThesisType(theValue: string): string {
+        switch (theValue) {
+            case "ba":
+            case "bachelor":
+            case "bachelors":
+            case "bathesis":
+            case "bachelorsthesis":
+                return "Bachelor’s thesis"
+            case "ma":
+            case "master":
+            case "masters":
+            case "mathesis":
+            case "mastersthesis":
+                return "Master’s thesis"
+            default:
+                return "Doctoral dissertation"
+        }
     }
 
     _reformKey(theValue: string | unknown, fKey: string): string {
